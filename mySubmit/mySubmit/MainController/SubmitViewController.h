@@ -12,6 +12,7 @@
 #import "DDTTYLogger.h"
 #import "MyHTTPConnection.h"
 #import "SJXCSMIPHelper.h"
+#import <AFNetworkReachabilityManager.h>
 
 @interface SubmitViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *wifiLabel;
