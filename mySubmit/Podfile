@@ -1,6 +1,8 @@
-#platform :ios, '8.0'
+platform :ios, '8.0'
 
 target 'mySubmit' do
           pod 'WCDB', '~> 1.0.5'
 	  pod 'ReactiveCocoa', '~> 2.5'
+      pod 'AFNetworking'
+      pod 'Masonry'
 end

@@ -1,4 +1,20 @@
 PODS:
+  - AFNetworking (3.2.0):
+    - AFNetworking/NSURLSession (= 3.2.0)
+    - AFNetworking/Reachability (= 3.2.0)
+    - AFNetworking/Security (= 3.2.0)
+    - AFNetworking/Serialization (= 3.2.0)
+    - AFNetworking/UIKit (= 3.2.0)
+  - AFNetworking/NSURLSession (3.2.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.0)
+  - AFNetworking/Security (3.2.0)
+  - AFNetworking/Serialization (3.2.0)
+  - AFNetworking/UIKit (3.2.0):
+    - AFNetworking/NSURLSession
+  - Masonry (1.1.0)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -11,18 +27,24 @@ PODS:
   - WCDB/sqlcipher (1.0.6)
 
 DEPENDENCIES:
+  - AFNetworking
+  - Masonry
   - ReactiveCocoa (~> 2.5)
   - WCDB (~> 1.0.5)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
+    - Masonry
     - ReactiveCocoa
     - WCDB
 
 SPEC CHECKSUMS:
+  AFNetworking: 8ac6017b94ea105479f7776e5288e48ae9c59bb4
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   WCDB: 4d2926bf695b2e00d785b50afd32c2dcc8cbbd98
 
-PODFILE CHECKSUM: ee4c2509c96310a2ece9891217ef6c6a826a601f
+PODFILE CHECKSUM: a00bf132e822d48c989a8e7fa7f9dd3ca12acf08
 
 COCOAPODS: 1.5.0
