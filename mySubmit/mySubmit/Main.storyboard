@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="-3075" y="-366"/>
         </scene>
-        <!--传输歌曲-->
+        <!--传输文件-->
         <scene sceneID="JAs-jg-7BI">
             <objects>
-                <viewController storyboardIdentifier="SubmitViewController" title="传输歌曲" id="jTB-dY-kM0" customClass="SubmitViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SubmitViewController" title="传输文件" id="jTB-dY-kM0" customClass="SubmitViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Xw9-lX-OHe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -180,6 +180,12 @@
                         <viewLayoutGuide key="safeArea" id="c2N-Ns-VJ2"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="doneBtn" destination="xyE-mG-jV5" id="sdS-CP-Jrc"/>
+                        <outlet property="fileCountLabel" destination="Jcu-uI-nS0" id="gQJ-hG-MGe"/>
+                        <outlet property="ipAddressLabel" destination="69O-6z-AHJ" id="k8i-6a-e7E"/>
+                        <outlet property="wifiLabel" destination="A6Y-49-kwY" id="qaH-bs-3uR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5EK-i6-MIQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HTTPServer.h"
+#import "DDLog.h"
+#import "DDTTYLogger.h"
+#import "MyHTTPConnection.h"
+#import "SJXCSMIPHelper.h"
 
 @interface SubmitViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *wifiLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ipAddressLabel;
+@property (weak, nonatomic) IBOutlet UILabel *fileCountLabel;
+@property (weak, nonatomic) IBOutlet UIButton *doneBtn;
+
 
 @end

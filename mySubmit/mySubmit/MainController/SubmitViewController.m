@@ -8,7 +8,12 @@
 
 #import "SubmitViewController.h"
 
-@interface SubmitViewController ()
+@interface SubmitViewController (){
+    HTTPServer * httpServer;
+}
+
+//fileArray
+@property (nonatomic, strong) NSMutableArray *fileArray;
 
 @end
 
@@ -16,6 +21,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showFile) name:@"processEpilogueData" object:nil];
+
     // Do any additional setup after loading the view.
 }
 
