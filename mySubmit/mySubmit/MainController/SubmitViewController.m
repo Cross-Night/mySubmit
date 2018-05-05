@@ -6,6 +6,10 @@
 //  Copyright © 2018年 demo. All rights reserved.
 //
 
+#define R_VALUE(argb) ((argb >> 16) & 0x000000FF)
+#define G_VALUE(argb) ((argb >> 8) & 0x000000FF)
+#define B_VALUE(argb) (argb & 0x000000FF)
+
 #import "SubmitViewController.h"
 #import <ReactiveCocoa.h>
 
@@ -17,6 +21,7 @@
 //fileArray
 @property (nonatomic, strong) NSMutableArray *fileArray;
 @property (nonatomic, strong) NSString * ipString;
+@property (nonatomic, assign) NSInteger fileCount;
 
 @end
 
@@ -24,6 +29,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.fileCount = 0;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showFile) name:@"processEpilogueData" object:nil];
     
@@ -91,9 +98,41 @@
 }
 
 - (void)showFile {
-    NSString *filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
-    NSLog(@"filePath : %@", filePath);
+    NSLog(@"连通了");
     
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSFileManager *fileManager=[NSFileManager defaultManager];
+        NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+        NSLog(@"地址：%@", documentsPath);
+        
+        self.fileArray = [NSMutableArray arrayWithArray:[fileManager contentsOfDirectoryAtPath:documentsPath error:nil]];
+        //[self.fileTableView reloadData];
+        
+        self.fileCount ++;
+        [self showFileCount:self.fileCount];
+    });
+    
+}
+
+
+- (void)showFileCount:(NSInteger)count {   //更新界面
+    NSString * countStr = [NSString stringWithFormat:@"%ld",count];
+    NSString * countLabelStr = [NSString stringWithFormat:@"已导入%ld个文件",count];
+    UIColor * blackColor = [self colorWithHexString:@"#666666" alpha:1.0];
+    NSMutableAttributedString * AttriStr = [[NSMutableAttributedString alloc] initWithString:countLabelStr];
+    NSDictionary * dic = @{NSFontAttributeName:[UIFont boldSystemFontOfSize:20],NSForegroundColorAttributeName:blackColor};
+    [AttriStr setAttributes:dic range:NSMakeRange(3, countStr.length)];
+    self.fileCountLabel.attributedText = AttriStr;
+}
+
+- (UIColor *)colorWithHexString:(NSString *)colorString alpha:(CGFloat)alpha
+{
+    const char *cStr = [colorString cStringUsingEncoding:NSASCIIStringEncoding];
+    long x = strtol(cStr + 1, NULL, 16);
+    
+    UIColor *color =  [UIColor colorWithRed:(float)R_VALUE(x) / 255.0f green:(float)G_VALUE(x) / 255.0f blue:(float)B_VALUE(x) / 255.0f alpha:alpha];
+    
+    return color;
 }
 
 
