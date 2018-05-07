@@ -11,6 +11,7 @@
 #define B_VALUE(argb) (argb & 0x000000FF)
 
 #import "SubmitViewController.h"
+#import "fileListTableViewController.h"
 #import <ReactiveCocoa.h>
 
 
@@ -134,6 +135,16 @@
     
     return color;
 }
+
+
+- (IBAction)onDoneBtnClicked:(UIButton *)sender {
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    fileListTableViewController * fileListVC = (fileListTableViewController *)[storyboard instantiateViewControllerWithIdentifier:@"fileListTableViewController"];
+    fileListVC.fileList = @[@"1",@"2",@"3"];
+    NSInteger count = fileListVC.fileList.count;
+    [self.navigationController pushViewController:fileListVC animated:YES];
+}
+
 
 
 - (void)didReceiveMemoryWarning {

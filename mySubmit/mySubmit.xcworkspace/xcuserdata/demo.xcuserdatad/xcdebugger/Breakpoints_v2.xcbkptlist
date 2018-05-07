@@ -20,12 +20,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "mySubmit/MainController/SubmitViewController.m"
-            timestampString = "547063550.16868"
+            timestampString = "547408992.302451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "SubmitViewController()"
+            landmarkType = "2">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "mySubmit/MainController/fileListTableViewController.m"
+            timestampString = "547408992.3025661"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

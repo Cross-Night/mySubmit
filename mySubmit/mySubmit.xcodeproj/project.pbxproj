@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		16E2C5FDA9CE7FB2615657ED /* libPods-mySubmit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72FEF33EFCE6D4DC6D8A7E5F /* libPods-mySubmit.a */; };
+		B40384EB209EDD1400FCA761 /* fileListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B40384EA209EDD1400FCA761 /* fileListTableViewController.m */; };
+		B40384F1209FEDC500FCA761 /* fileListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B40384F0209FEDC500FCA761 /* fileListTableViewCell.m */; };
 		B455F72F2078B967000BBD09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B455F72E2078B967000BBD09 /* AppDelegate.m */; };
 		B455F7322078B967000BBD09 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B455F7312078B967000BBD09 /* ViewController.m */; };
 		B455F7372078B969000BBD09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B455F7362078B969000BBD09 /* Assets.xcassets */; };
@@ -73,6 +75,10 @@
 		3A39F383C42D8F933ABD481B /* Pods-mySubmit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mySubmit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mySubmit/Pods-mySubmit.debug.xcconfig"; sourceTree = "<group>"; };
 		72FEF33EFCE6D4DC6D8A7E5F /* libPods-mySubmit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mySubmit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8528460DAAF79004A803446C /* Pods-mySubmit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mySubmit.release.xcconfig"; path = "Pods/Target Support Files/Pods-mySubmit/Pods-mySubmit.release.xcconfig"; sourceTree = "<group>"; };
+		B40384E9209EDD1400FCA761 /* fileListTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fileListTableViewController.h; sourceTree = "<group>"; };
+		B40384EA209EDD1400FCA761 /* fileListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fileListTableViewController.m; sourceTree = "<group>"; };
+		B40384EF209FEDC500FCA761 /* fileListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fileListTableViewCell.h; sourceTree = "<group>"; };
+		B40384F0209FEDC500FCA761 /* fileListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fileListTableViewCell.m; sourceTree = "<group>"; };
 		B455F72A2078B967000BBD09 /* mySubmit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mySubmit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B455F72D2078B967000BBD09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B455F72E2078B967000BBD09 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -190,6 +196,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B40384EE209FED8100FCA761 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B40384EF209FEDC500FCA761 /* fileListTableViewCell.h */,
+				B40384F0209FEDC500FCA761 /* fileListTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B42AA2C62099B581005797EA /* thirdPart */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +238,7 @@
 		B455F72C2078B967000BBD09 /* mySubmit */ = {
 			isa = PBXGroup;
 			children = (
+				B40384EE209FED8100FCA761 /* View */,
 				B4CA4D4A209B595800FEB534 /* MainController */,
 				B42AA2C62099B581005797EA /* thirdPart */,
 				B455F72D2078B967000BBD09 /* AppDelegate.h */,
@@ -402,6 +418,8 @@
 				B4CA4D4F209B5CF500FEB534 /* mySubmit.storyboard */,
 				B4CA4D51209B606800FEB534 /* SubmitViewController.h */,
 				B4CA4D52209B606800FEB534 /* SubmitViewController.m */,
+				B40384E9209EDD1400FCA761 /* fileListTableViewController.h */,
+				B40384EA209EDD1400FCA761 /* fileListTableViewController.m */,
 			);
 			path = MainController;
 			sourceTree = "<group>";
@@ -578,6 +596,7 @@
 				B455F7322078B967000BBD09 /* ViewController.m in Sources */,
 				B4CA4D34209B0AE900FEB534 /* MultipartMessageHeader.m in Sources */,
 				B4CA4D43209B0AE900FEB534 /* DDAbstractDatabaseLogger.m in Sources */,
+				B40384F1209FEDC500FCA761 /* fileListTableViewCell.m in Sources */,
 				B4CA4D3F209B0AE900FEB534 /* DispatchQueueLogFormatter.m in Sources */,
 				B4CA4D38209B0AE900FEB534 /* DDRange.m in Sources */,
 				B4CA4D3D209B0AE900FEB534 /* DDASLLogger.m in Sources */,
@@ -599,6 +618,7 @@
 				B4CA4D28209B0AE900FEB534 /* MyHTTPConnection.m in Sources */,
 				B4CA4D41209B0AE900FEB534 /* DDLog.m in Sources */,
 				B4CA4D2E209B0AE900FEB534 /* HTTPRedirectResponse.m in Sources */,
+				B40384EB209EDD1400FCA761 /* fileListTableViewController.m in Sources */,
 				B4CA4D2F209B0AE900FEB534 /* HTTPMessage.m in Sources */,
 				B4CA4D35209B0AE900FEB534 /* HTTPAuthenticationRequest.m in Sources */,
 				B4CA4D2D209B0AE900FEB534 /* HTTPAsyncFileResponse.m in Sources */,
