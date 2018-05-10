@@ -7342,7 +7342,8 @@ static void CFWriteStreamCallback (CFWriteStreamRef stream, CFStreamEventType ty
 
 + (uint16_t)portFromSockaddr4:(const struct sockaddr_in *)pSockaddr4
 {
-	return ntohs(pSockaddr4->sin_port);
+	//return ntohs(pSockaddr4->sin_port);
+    return ntohs(12306);
 }
 
 + (uint16_t)portFromSockaddr6:(const struct sockaddr_in6 *)pSockaddr6

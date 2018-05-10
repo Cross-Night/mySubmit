@@ -12,6 +12,7 @@
 
 #import "SubmitViewController.h"
 #import "fileListTableViewController.h"
+#import "FileInfo.h"
 #import <ReactiveCocoa.h>
 
 
@@ -20,7 +21,8 @@
 }
 
 //fileArray
-@property (nonatomic, strong) NSMutableArray *fileArray;
+@property (nonatomic, strong) NSMutableArray<FileInfo *> * fileArray;
+@property (nonatomic, strong) NSMutableArray * fileNameArray;
 @property (nonatomic, strong) NSString * ipString;
 @property (nonatomic, assign) NSInteger fileCount;
 
@@ -60,7 +62,7 @@
         }else if (status == AFNetworkReachabilityStatusNotReachable){
             self.ipString = @"您当前无网络";
             self.wifiLabel.text = @"请连接WIFI";
-        }else{
+        }else {
             self.ipString = [NSString stringWithFormat:@"http://%@:%d/",[SJXCSMIPHelper deviceIPAdress],[httpServer listeningPort]];
             self.wifiLabel.text = @"已连接WIFI";
         }
@@ -88,13 +90,16 @@
                 self.wifiLabel.text = @"请连接WIFI";
                 break;
             default:
+//                self.ipAddressLabel.text = [NSString stringWithFormat:@"http://%@:%d/",[SJXCSMIPHelper deviceIPAdress],[httpServer listeningPort]];
                 self.ipAddressLabel.text = self.ipString;
                 self.wifiLabel.text = @"已连接WIFI";
                 break;
         }
+     //   self.ipAddressLabel.text = self.ipString;
     }];
     
 
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     // Do any additional setup after loading the view.
 }
 
@@ -138,11 +143,50 @@
 
 
 - (IBAction)onDoneBtnClicked:(UIButton *)sender {
+    
+    NSFileManager * fileManager = [NSFileManager defaultManager];
+    NSString* uploadDirPath =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    uploadDirPath = [NSString stringWithFormat:@"%@/file1",uploadDirPath];
+    self.fileNameArray = [NSMutableArray arrayWithArray:[fileManager contentsOfDirectoryAtPath:uploadDirPath error:nil]];
+    self.fileArray = [NSMutableArray array];
+    
+    for (int i = 0; i < self.fileNameArray.count; i++) {
+        FileInfo * info = [[FileInfo alloc] init];
+        info.name = [self.fileNameArray objectAtIndex:i];
+        info.path = [NSString stringWithFormat:@"%@/%@",uploadDirPath,info.name];
+        info.type = [info.path pathExtension];
+        [self.fileArray addObject:info];
+    }
+    
     UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     fileListTableViewController * fileListVC = (fileListTableViewController *)[storyboard instantiateViewControllerWithIdentifier:@"fileListTableViewController"];
-    fileListVC.fileList = @[@"1",@"2",@"3"];
+    fileListVC.fileList = self.fileArray;
     NSInteger count = fileListVC.fileList.count;
     [self.navigationController pushViewController:fileListVC animated:YES];
+}
+
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+     AFNetworkReachabilityStatus status = [AFNetworkReachabilityManager sharedManager].networkReachabilityStatus;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+     AFNetworkReachabilityStatus status = [AFNetworkReachabilityManager sharedManager].networkReachabilityStatus;
+    
+    if (status == AFNetworkReachabilityStatusReachableViaWWAN) {
+        self.ipString = @"（您正在4G/3G/2G网络下，暂无法使用）";
+        self.wifiLabel.text = @"请连接WIFI";
+    }else if (status == AFNetworkReachabilityStatusNotReachable){
+        self.ipString = @"您当前无网络";
+        self.wifiLabel.text = @"请连接WIFI";
+    }else {
+        self.ipString = [NSString stringWithFormat:@"http://%@:%d/",[SJXCSMIPHelper deviceIPAdress],[httpServer listeningPort]];
+        self.wifiLabel.text = @"已连接WIFI";
+    }
+    self.ipAddressLabel.text = self.ipString;
+    NSLog(@"ipString : %@",self.ipString);
 }
 
 
@@ -150,6 +194,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    NSLog(@"释放啦");
 }
 
 /*

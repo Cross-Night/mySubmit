@@ -10,6 +10,7 @@
 		16E2C5FDA9CE7FB2615657ED /* libPods-mySubmit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72FEF33EFCE6D4DC6D8A7E5F /* libPods-mySubmit.a */; };
 		B40384EB209EDD1400FCA761 /* fileListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B40384EA209EDD1400FCA761 /* fileListTableViewController.m */; };
 		B40384F1209FEDC500FCA761 /* fileListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B40384F0209FEDC500FCA761 /* fileListTableViewCell.m */; };
+		B40384F520A4397600FCA761 /* FileInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B40384F420A4397600FCA761 /* FileInfo.m */; };
 		B455F72F2078B967000BBD09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B455F72E2078B967000BBD09 /* AppDelegate.m */; };
 		B455F7322078B967000BBD09 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B455F7312078B967000BBD09 /* ViewController.m */; };
 		B455F7372078B969000BBD09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B455F7362078B969000BBD09 /* Assets.xcassets */; };
@@ -79,6 +80,8 @@
 		B40384EA209EDD1400FCA761 /* fileListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fileListTableViewController.m; sourceTree = "<group>"; };
 		B40384EF209FEDC500FCA761 /* fileListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fileListTableViewCell.h; sourceTree = "<group>"; };
 		B40384F0209FEDC500FCA761 /* fileListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fileListTableViewCell.m; sourceTree = "<group>"; };
+		B40384F320A4397600FCA761 /* FileInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileInfo.h; sourceTree = "<group>"; };
+		B40384F420A4397600FCA761 /* FileInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileInfo.m; sourceTree = "<group>"; };
 		B455F72A2078B967000BBD09 /* mySubmit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mySubmit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B455F72D2078B967000BBD09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B455F72E2078B967000BBD09 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -205,6 +208,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B40384F220A4394800FCA761 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B40384F320A4397600FCA761 /* FileInfo.h */,
+				B40384F420A4397600FCA761 /* FileInfo.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B42AA2C62099B581005797EA /* thirdPart */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +250,7 @@
 		B455F72C2078B967000BBD09 /* mySubmit */ = {
 			isa = PBXGroup;
 			children = (
+				B40384F220A4394800FCA761 /* Model */,
 				B40384EE209FED8100FCA761 /* View */,
 				B4CA4D4A209B595800FEB534 /* MainController */,
 				B42AA2C62099B581005797EA /* thirdPart */,
@@ -595,6 +608,7 @@
 				B4CA4D36209B0AE900FEB534 /* DDNumber.m in Sources */,
 				B455F7322078B967000BBD09 /* ViewController.m in Sources */,
 				B4CA4D34209B0AE900FEB534 /* MultipartMessageHeader.m in Sources */,
+				B40384F520A4397600FCA761 /* FileInfo.m in Sources */,
 				B4CA4D43209B0AE900FEB534 /* DDAbstractDatabaseLogger.m in Sources */,
 				B40384F1209FEDC500FCA761 /* fileListTableViewCell.m in Sources */,
 				B4CA4D3F209B0AE900FEB534 /* DispatchQueueLogFormatter.m in Sources */,

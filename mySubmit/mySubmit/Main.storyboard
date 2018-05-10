@@ -231,7 +231,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="341" height="69.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fileNameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fl4-mb-tc0">
-                                                    <rect key="frame" x="10" y="24.5" width="110" height="21"/>
+                                                    <rect key="frame" x="10" y="24.5" width="242" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="4Mg-f2-X06"/>
                                                     </constraints>
@@ -240,8 +240,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fileTypeLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jgw-6T-b26">
-                                                    <rect key="frame" x="240" y="24" width="101" height="21"/>
+                                                    <rect key="frame" x="272" y="24" width="69" height="21"/>
                                                     <constraints>
+                                                        <constraint firstAttribute="width" constant="69" id="3bc-c4-vOy"/>
                                                         <constraint firstAttribute="height" constant="21" id="Xzf-cZ-gQL"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -251,6 +252,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
+                                                <constraint firstItem="jgw-6T-b26" firstAttribute="leading" secondItem="fl4-mb-tc0" secondAttribute="trailing" constant="20" id="HOv-Lo-Mnt"/>
                                                 <constraint firstItem="jgw-6T-b26" firstAttribute="centerY" secondItem="3zd-k8-rSE" secondAttribute="centerY" id="VeR-RD-Wga"/>
                                                 <constraint firstItem="fl4-mb-tc0" firstAttribute="centerY" secondItem="3zd-k8-rSE" secondAttribute="centerY" id="ohM-76-Xf0"/>
                                                 <constraint firstItem="fl4-mb-tc0" firstAttribute="leading" secondItem="3zd-k8-rSE" secondAttribute="leading" constant="10" id="xWr-Nz-gVU"/>

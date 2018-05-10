@@ -152,7 +152,7 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE
 //	NSString* uploadDirPath = [[config documentRoot] stringByAppendingPathComponent:@"upload"];
     // 在这里修改文件存储的位置
     NSString* uploadDirPath =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-
+    uploadDirPath = [NSString stringWithFormat:@"%@/file1",uploadDirPath];
 	BOOL isDir = YES;
 	if (![[NSFileManager defaultManager]fileExistsAtPath:uploadDirPath isDirectory:&isDir ]) {
 		[[NSFileManager defaultManager]createDirectoryAtPath:uploadDirPath withIntermediateDirectories:YES attributes:nil error:nil];

@@ -8,6 +8,7 @@
 
 #import "fileListTableViewController.h"
 #import "fileListTableViewCell.h"
+#import "FileInfo.h"
 
 @interface fileListTableViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *fileListTableView;
@@ -21,6 +22,11 @@
     [super viewDidLoad];
     self.fileListTableView.delegate = self;
     self.fileListTableView.dataSource = self;
+    
+    NSFileManager * fileManager = [NSFileManager defaultManager];
+    NSString* uploadDirPath =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
+    uploadDirPath = [NSString stringWithFormat:@"%@/file1",uploadDirPath];
+    
    // [self.tableView registerNib:nil forCellReuseIdentifier:@"fileListTableViewCell"];
     //[self.fileListTableView registerClass:[fileListTableViewCell class] forCellReuseIdentifier:@"fileListTableViewCell"];
 //    [self.tableView registerClass: forCellReuseIdentifier:@"fileListTableViewCell"];
@@ -44,7 +50,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return self.fileList.count;
 #warning Incomplete implementation, return the number of rows
     //return self.fileList.count;
 }
@@ -54,8 +60,10 @@
     fileListTableViewCell *cell = (fileListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"fileListTableViewCell"];
     //cell.backgroundColor = [UIColor clearColor];
     if (cell) {
-        cell.fileNameLabel.text = @"格子";
-        cell.fileTypeLabel.text = @"详细";
+        NSString * string = self.fileList[indexPath.row];
+        FileInfo * info = self.fileList[indexPath.row];
+        cell.fileNameLabel.text = info.name;
+        cell.fileTypeLabel.text = info.type;
     }
     
     
