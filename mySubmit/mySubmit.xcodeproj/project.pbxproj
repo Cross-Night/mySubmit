@@ -11,6 +11,9 @@
 		B40384EB209EDD1400FCA761 /* fileListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B40384EA209EDD1400FCA761 /* fileListTableViewController.m */; };
 		B40384F1209FEDC500FCA761 /* fileListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B40384F0209FEDC500FCA761 /* fileListTableViewCell.m */; };
 		B40384F520A4397600FCA761 /* FileInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B40384F420A4397600FCA761 /* FileInfo.m */; };
+		B445729920A7E485004FA92B /* ImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = B445729820A7E485004FA92B /* ImageController.m */; };
+		B445729E20A82359004FA92B /* MusicPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B445729D20A82359004FA92B /* MusicPlayerView.xib */; };
+		B44572A120A83016004FA92B /* MusicPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B44572A020A83016004FA92B /* MusicPlayerView.m */; };
 		B455F72F2078B967000BBD09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B455F72E2078B967000BBD09 /* AppDelegate.m */; };
 		B455F7322078B967000BBD09 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B455F7312078B967000BBD09 /* ViewController.m */; };
 		B455F7372078B969000BBD09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B455F7362078B969000BBD09 /* Assets.xcassets */; };
@@ -82,6 +85,11 @@
 		B40384F0209FEDC500FCA761 /* fileListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fileListTableViewCell.m; sourceTree = "<group>"; };
 		B40384F320A4397600FCA761 /* FileInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileInfo.h; sourceTree = "<group>"; };
 		B40384F420A4397600FCA761 /* FileInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileInfo.m; sourceTree = "<group>"; };
+		B445729720A7E485004FA92B /* ImageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageController.h; sourceTree = "<group>"; };
+		B445729820A7E485004FA92B /* ImageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageController.m; sourceTree = "<group>"; };
+		B445729D20A82359004FA92B /* MusicPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicPlayerView.xib; sourceTree = "<group>"; };
+		B445729F20A83016004FA92B /* MusicPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicPlayerView.h; sourceTree = "<group>"; };
+		B44572A020A83016004FA92B /* MusicPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicPlayerView.m; sourceTree = "<group>"; };
 		B455F72A2078B967000BBD09 /* mySubmit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mySubmit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B455F72D2078B967000BBD09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B455F72E2078B967000BBD09 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -204,6 +212,9 @@
 			children = (
 				B40384EF209FEDC500FCA761 /* fileListTableViewCell.h */,
 				B40384F0209FEDC500FCA761 /* fileListTableViewCell.m */,
+				B445729D20A82359004FA92B /* MusicPlayerView.xib */,
+				B445729F20A83016004FA92B /* MusicPlayerView.h */,
+				B44572A020A83016004FA92B /* MusicPlayerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -433,6 +444,8 @@
 				B4CA4D52209B606800FEB534 /* SubmitViewController.m */,
 				B40384E9209EDD1400FCA761 /* fileListTableViewController.h */,
 				B40384EA209EDD1400FCA761 /* fileListTableViewController.m */,
+				B445729720A7E485004FA92B /* ImageController.h */,
+				B445729820A7E485004FA92B /* ImageController.m */,
 			);
 			path = MainController;
 			sourceTree = "<group>";
@@ -558,6 +571,7 @@
 				B455F7372078B969000BBD09 /* Assets.xcassets in Resources */,
 				B4CA4D40209B0AE900FEB534 /* README.txt in Resources */,
 				B4CA4D42209B0AE900FEB534 /* About.txt in Resources */,
+				B445729E20A82359004FA92B /* MusicPlayerView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -605,8 +619,10 @@
 			files = (
 				B4CA4D31209B0AE900FEB534 /* WebSocket.m in Sources */,
 				B4CA4D29209B0AE900FEB534 /* HTTPErrorResponse.m in Sources */,
+				B445729920A7E485004FA92B /* ImageController.m in Sources */,
 				B4CA4D36209B0AE900FEB534 /* DDNumber.m in Sources */,
 				B455F7322078B967000BBD09 /* ViewController.m in Sources */,
+				B44572A120A83016004FA92B /* MusicPlayerView.m in Sources */,
 				B4CA4D34209B0AE900FEB534 /* MultipartMessageHeader.m in Sources */,
 				B40384F520A4397600FCA761 /* FileInfo.m in Sources */,
 				B4CA4D43209B0AE900FEB534 /* DDAbstractDatabaseLogger.m in Sources */,

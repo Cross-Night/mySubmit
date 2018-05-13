@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" restorationIdentifier="MusicPlayerView" id="iN0-l3-epB" customClass="MusicPlayerView">
+            <rect key="frame" x="0.0" y="0.0" width="287" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="暂无音乐播放" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPL-DL-InT">
+                    <rect key="frame" x="15" y="19" width="86" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="adjust_vol" translatesAutoresizingMaskIntoConstraints="NO" id="pBl-d8-hep">
+                    <rect key="frame" x="15" y="46" width="21" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="Fwx-u9-pzp"/>
+                        <constraint firstAttribute="width" constant="21" id="UwD-9m-e9t"/>
+                    </constraints>
+                </imageView>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="Mb2-gu-BK0" customClass="DBSlider">
+                    <rect key="frame" x="44" y="42" width="102" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="98" id="pzy-AJ-LdQ"/>
+                    </constraints>
+                </slider>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zz3-e8-DRI">
+                    <rect key="frame" x="165" y="46" width="22" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="6fM-hI-2NR"/>
+                        <constraint firstAttribute="width" constant="22" id="to7-vg-pJr"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="pausing"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9FK-E3-dP8">
+                    <rect key="frame" x="206" y="46" width="22" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="22" id="JuG-qj-EO4"/>
+                        <constraint firstAttribute="width" constant="22" id="y9X-BA-hWJ"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="next"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVf-hQ-E2D">
+                    <rect key="frame" x="255" y="46" width="22" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="22" id="0s7-9r-7Pe"/>
+                        <constraint firstAttribute="height" constant="22" id="wCw-3y-ckw"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="more"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Mb2-gu-BK0" firstAttribute="centerY" secondItem="pBl-d8-hep" secondAttribute="centerY" id="31D-wp-K55"/>
+                <constraint firstItem="Mb2-gu-BK0" firstAttribute="leading" secondItem="pBl-d8-hep" secondAttribute="trailing" constant="10" id="3H9-Vo-jzY"/>
+                <constraint firstItem="BVf-hQ-E2D" firstAttribute="centerY" secondItem="9FK-E3-dP8" secondAttribute="centerY" id="8VL-ml-jwA"/>
+                <constraint firstItem="9FK-E3-dP8" firstAttribute="leading" secondItem="Zz3-e8-DRI" secondAttribute="trailing" constant="19" id="8re-gA-T9Y"/>
+                <constraint firstItem="PPL-DL-InT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="NoL-qd-mqF"/>
+                <constraint firstItem="Zz3-e8-DRI" firstAttribute="centerY" secondItem="Mb2-gu-BK0" secondAttribute="centerY" id="NtO-Cf-QK5"/>
+                <constraint firstItem="Zz3-e8-DRI" firstAttribute="leading" secondItem="Mb2-gu-BK0" secondAttribute="trailing" constant="21" id="VDH-5v-bJe"/>
+                <constraint firstItem="9FK-E3-dP8" firstAttribute="centerY" secondItem="Zz3-e8-DRI" secondAttribute="centerY" id="VbW-j4-nLz"/>
+                <constraint firstItem="pBl-d8-hep" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="XO0-em-cT5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="BVf-hQ-E2D" secondAttribute="trailing" constant="10" id="Xio-Lp-lIW"/>
+                <constraint firstItem="Mb2-gu-BK0" firstAttribute="top" secondItem="PPL-DL-InT" secondAttribute="bottom" constant="6" id="g8J-P9-oE2"/>
+                <constraint firstItem="pBl-d8-hep" firstAttribute="top" secondItem="PPL-DL-InT" secondAttribute="bottom" constant="10" id="qKf-f1-Pca"/>
+                <constraint firstItem="PPL-DL-InT" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="19" id="tz9-de-fVd"/>
+                <constraint firstItem="BVf-hQ-E2D" firstAttribute="leading" secondItem="9FK-E3-dP8" secondAttribute="trailing" constant="27" id="zcO-ea-JEU"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="moreBtn" destination="BVf-hQ-E2D" id="0j4-3Y-oal"/>
+                <outlet property="musicNameLabel" destination="PPL-DL-InT" id="iSc-3Y-uXz"/>
+                <outlet property="nextBtn" destination="9FK-E3-dP8" id="C82-jS-bVJ"/>
+                <outlet property="playBtn" destination="Zz3-e8-DRI" id="veQ-w2-llY"/>
+                <outlet property="volSlider" destination="Mb2-gu-BK0" id="K2S-5I-wKk"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="160"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="adjust_vol" width="16" height="16"/>
+        <image name="more" width="22" height="22"/>
+        <image name="next" width="22" height="22"/>
+        <image name="pausing" width="22" height="22"/>
+    </resources>
+</document>

@@ -9,6 +9,7 @@
 #import "fileListTableViewController.h"
 #import "fileListTableViewCell.h"
 #import "FileInfo.h"
+#import "ImageController.h"
 
 @interface fileListTableViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *fileListTableView;
@@ -70,6 +71,20 @@
     return cell;
 }
 
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    FileInfo * info = self.fileList[indexPath.row];
+    if ([info.type isEqualToString:@"png"]||[info.type isEqualToString:@"jpg"]) {
+        ImageController * imageVC = [[ImageController alloc] init];
+        imageVC.image = [[UIImage alloc] initWithContentsOfFile:info.path];
+        [self.navigationController pushViewController:imageVC animated:YES];
+        
+    }else if ([info.type isEqualToString:@"mp3"]){
+        
+    }else if ([info.type isEqualToString:@"rmvb"]){
+        
+    }
+}
 
 /*
 // Override to support conditional editing of the table view.
