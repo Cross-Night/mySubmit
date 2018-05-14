@@ -10,6 +10,27 @@
 
 @implementation MusicPlayerView
 
++ (instancetype)loadFromNib{
+    return [[NSBundle mainBundle] loadNibNamed:@"MusicPlayerView" owner:self options:nil].firstObject;
+}
+
+- (void)awakeFromNib{
+    [super awakeFromNib];
+}
+
+
+- (IBAction)onPlayBtnClicked:(UIButton *)sender {
+    if (_delegate) {
+        [_delegate onPlayMusic];
+    }
+}
+
+- (IBAction)onVolValueChanged:(UISlider *)sender {
+    if (_delegate) {
+        [_delegate onAdjustVol:sender.value];
+    }
+}
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.

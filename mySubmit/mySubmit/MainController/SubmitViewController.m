@@ -43,6 +43,7 @@
     
     httpServer = [[HTTPServer alloc] init];
     [httpServer setType:@"_http._tcp."];
+    //[httpServer setPort:4656];
     // webPath是server搜寻HTML等文件的路径
     NSString *webPath = [[NSBundle mainBundle] resourcePath];
     NSLog(@"webPath : %@", webPath);

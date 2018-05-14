@@ -11,6 +11,8 @@
 		B40384EB209EDD1400FCA761 /* fileListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B40384EA209EDD1400FCA761 /* fileListTableViewController.m */; };
 		B40384F1209FEDC500FCA761 /* fileListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B40384F0209FEDC500FCA761 /* fileListTableViewCell.m */; };
 		B40384F520A4397600FCA761 /* FileInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B40384F420A4397600FCA761 /* FileInfo.m */; };
+		B429A51A20A922C70091D33B /* MusicController.m in Sources */ = {isa = PBXBuildFile; fileRef = B429A51920A922C70091D33B /* MusicController.m */; };
+		B429A52020A9FAE50091D33B /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B429A51F20A9FAE50091D33B /* VideoViewController.m */; };
 		B445729920A7E485004FA92B /* ImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = B445729820A7E485004FA92B /* ImageController.m */; };
 		B445729E20A82359004FA92B /* MusicPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B445729D20A82359004FA92B /* MusicPlayerView.xib */; };
 		B44572A120A83016004FA92B /* MusicPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B44572A020A83016004FA92B /* MusicPlayerView.m */; };
@@ -85,6 +87,12 @@
 		B40384F0209FEDC500FCA761 /* fileListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = fileListTableViewCell.m; sourceTree = "<group>"; };
 		B40384F320A4397600FCA761 /* FileInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileInfo.h; sourceTree = "<group>"; };
 		B40384F420A4397600FCA761 /* FileInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileInfo.m; sourceTree = "<group>"; };
+		B429A51820A922C70091D33B /* MusicController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicController.h; sourceTree = "<group>"; };
+		B429A51920A922C70091D33B /* MusicController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicController.m; sourceTree = "<group>"; };
+		B429A51B20A9256F0091D33B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B429A51C20A9256F0091D33B /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B429A51E20A9FAE50091D33B /* VideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		B429A51F20A9FAE50091D33B /* VideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
 		B445729720A7E485004FA92B /* ImageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImageController.h; sourceTree = "<group>"; };
 		B445729820A7E485004FA92B /* ImageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImageController.m; sourceTree = "<group>"; };
 		B445729D20A82359004FA92B /* MusicPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MusicPlayerView.xib; sourceTree = "<group>"; };
@@ -446,6 +454,10 @@
 				B40384EA209EDD1400FCA761 /* fileListTableViewController.m */,
 				B445729720A7E485004FA92B /* ImageController.h */,
 				B445729820A7E485004FA92B /* ImageController.m */,
+				B429A51820A922C70091D33B /* MusicController.h */,
+				B429A51920A922C70091D33B /* MusicController.m */,
+				B429A51E20A9FAE50091D33B /* VideoViewController.h */,
+				B429A51F20A9FAE50091D33B /* VideoViewController.m */,
 			);
 			path = MainController;
 			sourceTree = "<group>";
@@ -453,6 +465,8 @@
 		F516BDFA6C1482C17EF70D01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B429A51B20A9256F0091D33B /* AVFoundation.framework */,
+				B429A51C20A9256F0091D33B /* AVFoundation.framework */,
 				72FEF33EFCE6D4DC6D8A7E5F /* libPods-mySubmit.a */,
 			);
 			name = Frameworks;
@@ -639,6 +653,7 @@
 				B4CA4D39209B0AE900FEB534 /* HTTPServer.m in Sources */,
 				B4CA4D47209B0AE900FEB534 /* SJXCSMIPHelper.m in Sources */,
 				B4CA4D32209B0AE900FEB534 /* MultipartMessageHeaderField.m in Sources */,
+				B429A52020A9FAE50091D33B /* VideoViewController.m in Sources */,
 				B4CA4D45209B0AE900FEB534 /* GCDAsyncSocket.m in Sources */,
 				B4CA4D44209B0AE900FEB534 /* DDFileLogger.m in Sources */,
 				B4CA4D33209B0AE900FEB534 /* MultipartFormDataParser.m in Sources */,
@@ -647,6 +662,7 @@
 				B4CA4D53209B606800FEB534 /* SubmitViewController.m in Sources */,
 				B4CA4D28209B0AE900FEB534 /* MyHTTPConnection.m in Sources */,
 				B4CA4D41209B0AE900FEB534 /* DDLog.m in Sources */,
+				B429A51A20A922C70091D33B /* MusicController.m in Sources */,
 				B4CA4D2E209B0AE900FEB534 /* HTTPRedirectResponse.m in Sources */,
 				B40384EB209EDD1400FCA761 /* fileListTableViewController.m in Sources */,
 				B4CA4D2F209B0AE900FEB534 /* HTTPMessage.m in Sources */,

@@ -10,6 +10,8 @@
 #import "fileListTableViewCell.h"
 #import "FileInfo.h"
 #import "ImageController.h"
+#import "MusicController.h"
+#import "VideoViewController.h"
 
 @interface fileListTableViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *fileListTableView;
@@ -61,7 +63,7 @@
     fileListTableViewCell *cell = (fileListTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"fileListTableViewCell"];
     //cell.backgroundColor = [UIColor clearColor];
     if (cell) {
-        NSString * string = self.fileList[indexPath.row];
+       // NSString * string = self.fileList[indexPath.row];
         FileInfo * info = self.fileList[indexPath.row];
         cell.fileNameLabel.text = info.name;
         cell.fileTypeLabel.text = info.type;
@@ -80,9 +82,18 @@
         [self.navigationController pushViewController:imageVC animated:YES];
         
     }else if ([info.type isEqualToString:@"mp3"]){
-        
-    }else if ([info.type isEqualToString:@"rmvb"]){
-        
+        MusicController * musicVC = [[MusicController alloc] init];
+        musicVC.musicInfo = info;
+        [self.navigationController pushViewController:musicVC animated:YES];
+    }else if ([info.type isEqualToString:@"mp4"]){
+        VideoViewController * videoVC = [[VideoViewController alloc] init];
+        videoVC.videoInfo = info;
+        [self.navigationController pushViewController:videoVC animated:YES];
+    }else{
+        UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"警告" message:@"暂无法识别此格式" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        [alertVC addAction:cancelAction];
+        [self presentViewController:alertVC animated:YES completion:nil];
     }
 }
 
