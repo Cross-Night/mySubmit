@@ -236,12 +236,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		B42AA2C62099B581005797EA /* thirdPart */ = {
+		B42AA2C62099B581005797EA /* Part */ = {
 			isa = PBXGroup;
 			children = (
 				B4CA4CE1209B0AE900FEB534 /* MyHttpServer */,
 			);
-			path = thirdPart;
+			path = Part;
 			sourceTree = "<group>";
 		};
 		B455F7212078B967000BBD09 = {
@@ -272,7 +272,7 @@
 				B40384F220A4394800FCA761 /* Model */,
 				B40384EE209FED8100FCA761 /* View */,
 				B4CA4D4A209B595800FEB534 /* MainController */,
-				B42AA2C62099B581005797EA /* thirdPart */,
+				B42AA2C62099B581005797EA /* Part */,
 				B455F72D2078B967000BBD09 /* AppDelegate.h */,
 				B455F7302078B967000BBD09 /* ViewController.h */,
 				B455F7312078B967000BBD09 /* ViewController.m */,
