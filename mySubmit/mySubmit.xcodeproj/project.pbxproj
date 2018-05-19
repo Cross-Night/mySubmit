@@ -23,6 +23,13 @@
 		B455F73D2078B969000BBD09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B455F73C2078B969000BBD09 /* main.m */; };
 		B455F7472078B969000BBD09 /* mySubmitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B455F7462078B969000BBD09 /* mySubmitTests.m */; };
 		B455F7522078B969000BBD09 /* mySubmitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B455F7512078B969000BBD09 /* mySubmitUITests.m */; };
+		B484724420AECEAE003FADC2 /* UserInfo.mm in Sources */ = {isa = PBXBuildFile; fileRef = B484724120AECEAE003FADC2 /* UserInfo.mm */; };
+		B484724820AED4FF003FADC2 /* UserDBManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = B484724720AED4FF003FADC2 /* UserDBManager.mm */; };
+		B484724C20AEDEB1003FADC2 /* UserCache.m in Sources */ = {isa = PBXBuildFile; fileRef = B484724B20AEDEB1003FADC2 /* UserCache.m */; };
+		B484724F20AEFC64003FADC2 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B484724E20AEFC64003FADC2 /* LoginViewController.m */; };
+		B484725220AF0636003FADC2 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B484725120AF0636003FADC2 /* RegisterViewController.m */; };
+		B484725520AF1FF3003FADC2 /* beginSubmitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B484725420AF1FF3003FADC2 /* beginSubmitViewController.m */; };
+		B484725820AF2509003FADC2 /* AccountManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B484725720AF2509003FADC2 /* AccountManager.m */; };
 		B4CA4D28209B0AE900FEB534 /* MyHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CA4CE2209B0AE900FEB534 /* MyHTTPConnection.m */; };
 		B4CA4D29209B0AE900FEB534 /* HTTPErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CA4CEB209B0AE900FEB534 /* HTTPErrorResponse.m */; };
 		B4CA4D2A209B0AE900FEB534 /* HTTPDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CA4CEC209B0AE900FEB534 /* HTTPDataResponse.m */; };
@@ -113,6 +120,21 @@
 		B455F74D2078B969000BBD09 /* mySubmitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mySubmitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B455F7512078B969000BBD09 /* mySubmitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mySubmitUITests.m; sourceTree = "<group>"; };
 		B455F7532078B969000BBD09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B484724120AECEAE003FADC2 /* UserInfo.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = UserInfo.mm; sourceTree = "<group>"; };
+		B484724220AECEAE003FADC2 /* UserInfo+WCTTableCoding.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UserInfo+WCTTableCoding.h"; sourceTree = "<group>"; };
+		B484724320AECEAE003FADC2 /* UserInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserInfo.h; sourceTree = "<group>"; };
+		B484724620AED4FF003FADC2 /* UserDBManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDBManager.h; sourceTree = "<group>"; };
+		B484724720AED4FF003FADC2 /* UserDBManager.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = UserDBManager.mm; sourceTree = "<group>"; };
+		B484724A20AEDEB1003FADC2 /* UserCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserCache.h; sourceTree = "<group>"; };
+		B484724B20AEDEB1003FADC2 /* UserCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserCache.m; sourceTree = "<group>"; };
+		B484724D20AEFC64003FADC2 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		B484724E20AEFC64003FADC2 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		B484725020AF0636003FADC2 /* RegisterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		B484725120AF0636003FADC2 /* RegisterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		B484725320AF1FF3003FADC2 /* beginSubmitViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = beginSubmitViewController.h; sourceTree = "<group>"; };
+		B484725420AF1FF3003FADC2 /* beginSubmitViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = beginSubmitViewController.m; sourceTree = "<group>"; };
+		B484725620AF2509003FADC2 /* AccountManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountManager.h; sourceTree = "<group>"; };
+		B484725720AF2509003FADC2 /* AccountManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountManager.m; sourceTree = "<group>"; };
 		B4CA4CE2209B0AE900FEB534 /* MyHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyHTTPConnection.m; sourceTree = "<group>"; };
 		B4CA4CE4209B0AE900FEB534 /* HTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPConnection.h; sourceTree = "<group>"; };
 		B4CA4CE5209B0AE900FEB534 /* HTTPLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPLogging.h; sourceTree = "<group>"; };
@@ -232,6 +254,9 @@
 			children = (
 				B40384F320A4397600FCA761 /* FileInfo.h */,
 				B40384F420A4397600FCA761 /* FileInfo.m */,
+				B484724120AECEAE003FADC2 /* UserInfo.mm */,
+				B484724220AECEAE003FADC2 /* UserInfo+WCTTableCoding.h */,
+				B484724320AECEAE003FADC2 /* UserInfo.h */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -239,6 +264,7 @@
 		B42AA2C62099B581005797EA /* Part */ = {
 			isa = PBXGroup;
 			children = (
+				B484724520AED4D9003FADC2 /* WCDB */,
 				B4CA4CE1209B0AE900FEB534 /* MyHttpServer */,
 			);
 			path = Part;
@@ -269,6 +295,7 @@
 		B455F72C2078B967000BBD09 /* mySubmit */ = {
 			isa = PBXGroup;
 			children = (
+				B484724920AEDE9E003FADC2 /* Cache */,
 				B40384F220A4394800FCA761 /* Model */,
 				B40384EE209FED8100FCA761 /* View */,
 				B4CA4D4A209B595800FEB534 /* MainController */,
@@ -302,6 +329,26 @@
 				B455F7532078B969000BBD09 /* Info.plist */,
 			);
 			path = mySubmitUITests;
+			sourceTree = "<group>";
+		};
+		B484724520AED4D9003FADC2 /* WCDB */ = {
+			isa = PBXGroup;
+			children = (
+				B484724620AED4FF003FADC2 /* UserDBManager.h */,
+				B484724720AED4FF003FADC2 /* UserDBManager.mm */,
+			);
+			path = WCDB;
+			sourceTree = "<group>";
+		};
+		B484724920AEDE9E003FADC2 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				B484724A20AEDEB1003FADC2 /* UserCache.h */,
+				B484724B20AEDEB1003FADC2 /* UserCache.m */,
+				B484725620AF2509003FADC2 /* AccountManager.h */,
+				B484725720AF2509003FADC2 /* AccountManager.m */,
+			);
+			path = Cache;
 			sourceTree = "<group>";
 		};
 		B4CA4CE1209B0AE900FEB534 /* MyHttpServer */ = {
@@ -458,6 +505,12 @@
 				B429A51920A922C70091D33B /* MusicController.m */,
 				B429A51E20A9FAE50091D33B /* VideoViewController.h */,
 				B429A51F20A9FAE50091D33B /* VideoViewController.m */,
+				B484724D20AEFC64003FADC2 /* LoginViewController.h */,
+				B484724E20AEFC64003FADC2 /* LoginViewController.m */,
+				B484725020AF0636003FADC2 /* RegisterViewController.h */,
+				B484725120AF0636003FADC2 /* RegisterViewController.m */,
+				B484725320AF1FF3003FADC2 /* beginSubmitViewController.h */,
+				B484725420AF1FF3003FADC2 /* beginSubmitViewController.m */,
 			);
 			path = MainController;
 			sourceTree = "<group>";
@@ -636,7 +689,9 @@
 				B445729920A7E485004FA92B /* ImageController.m in Sources */,
 				B4CA4D36209B0AE900FEB534 /* DDNumber.m in Sources */,
 				B455F7322078B967000BBD09 /* ViewController.m in Sources */,
+				B484725220AF0636003FADC2 /* RegisterViewController.m in Sources */,
 				B44572A120A83016004FA92B /* MusicPlayerView.m in Sources */,
+				B484724C20AEDEB1003FADC2 /* UserCache.m in Sources */,
 				B4CA4D34209B0AE900FEB534 /* MultipartMessageHeader.m in Sources */,
 				B40384F520A4397600FCA761 /* FileInfo.m in Sources */,
 				B4CA4D43209B0AE900FEB534 /* DDAbstractDatabaseLogger.m in Sources */,
@@ -651,15 +706,20 @@
 				B4CA4D37209B0AE900FEB534 /* DDData.m in Sources */,
 				B4CA4D2B209B0AE900FEB534 /* HTTPDynamicFileResponse.m in Sources */,
 				B4CA4D39209B0AE900FEB534 /* HTTPServer.m in Sources */,
+				B484724420AECEAE003FADC2 /* UserInfo.mm in Sources */,
 				B4CA4D47209B0AE900FEB534 /* SJXCSMIPHelper.m in Sources */,
 				B4CA4D32209B0AE900FEB534 /* MultipartMessageHeaderField.m in Sources */,
 				B429A52020A9FAE50091D33B /* VideoViewController.m in Sources */,
+				B484725820AF2509003FADC2 /* AccountManager.m in Sources */,
+				B484725520AF1FF3003FADC2 /* beginSubmitViewController.m in Sources */,
 				B4CA4D45209B0AE900FEB534 /* GCDAsyncSocket.m in Sources */,
 				B4CA4D44209B0AE900FEB534 /* DDFileLogger.m in Sources */,
+				B484724820AED4FF003FADC2 /* UserDBManager.mm in Sources */,
 				B4CA4D33209B0AE900FEB534 /* MultipartFormDataParser.m in Sources */,
 				B4CA4D3C209B0AE900FEB534 /* DDTTYLogger.m in Sources */,
 				B4CA4D30209B0AE900FEB534 /* HTTPConnection.m in Sources */,
 				B4CA4D53209B606800FEB534 /* SubmitViewController.m in Sources */,
+				B484724F20AEFC64003FADC2 /* LoginViewController.m in Sources */,
 				B4CA4D28209B0AE900FEB534 /* MyHTTPConnection.m in Sources */,
 				B4CA4D41209B0AE900FEB534 /* DDLog.m in Sources */,
 				B429A51A20A922C70091D33B /* MusicController.m in Sources */,

@@ -10,6 +10,6 @@
 
 @interface fileListTableViewController : UITableViewController
 
-@property (nonatomic,strong) NSArray * fileList;
+@property (nonatomic,strong) NSMutableArray * fileList;
 
 @end

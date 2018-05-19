@@ -97,6 +97,33 @@
     }
 }
 
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        // 删除数据源对应模型
+        FileInfo * info = self.fileList[indexPath.row];
+        [self.fileList removeObjectAtIndex:indexPath.row];
+        NSLog(@"名字:%@",info.name);
+        NSFileManager * manager = [NSFileManager defaultManager];
+        if ([manager fileExistsAtPath:info.path]) {
+           BOOL delSuccess = [manager removeItemAtPath:info.path error:nil];
+            if (delSuccess) {
+                NSLog(@"删除成功");
+            }else{
+                NSLog(@"删除失败");
+            }
+        }else{
+            NSLog(@"文件不存在");
+        }
+        // 从tableView中删除
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObjects:indexPath, nil] withRowAnimation:UITableViewRowAnimationTop];
+    }
+}
+
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

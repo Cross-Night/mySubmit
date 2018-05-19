@@ -10,6 +10,9 @@
 #import "HTTPDynamicFileResponse.h"
 #import "HTTPFileResponse.h"
 
+#import "FileInfo.h"
+#import "AccountManager.h"
+
 // Log levels : off, error, warn, info, verbose
 // Other flags: trace
 static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE;
@@ -149,10 +152,11 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE
 		return;
 	}
     
+    UserInfo * info = [AccountManager defaultManager].info;
 //	NSString* uploadDirPath = [[config documentRoot] stringByAppendingPathComponent:@"upload"];
     // 在这里修改文件存储的位置
     NSString* uploadDirPath =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    uploadDirPath = [NSString stringWithFormat:@"%@/file1",uploadDirPath];
+    uploadDirPath = [NSString stringWithFormat:@"%@/%@",uploadDirPath,info.userID];
 	BOOL isDir = YES;
 	if (![[NSFileManager defaultManager]fileExistsAtPath:uploadDirPath isDirectory:&isDir ]) {
 		[[NSFileManager defaultManager]createDirectoryAtPath:uploadDirPath withIntermediateDirectories:YES attributes:nil error:nil];
@@ -163,6 +167,9 @@ static const int httpLogLevel = HTTP_LOG_LEVEL_VERBOSE; // | HTTP_LOG_FLAG_TRACE
     if( [[NSFileManager defaultManager] fileExistsAtPath:filePath] ) {
         storeFile = nil;
     }
+    
+    
+    
     else {
 		HTTPLogVerbose(@"Saving file to %@", filePath);
 		if(![[NSFileManager defaultManager] createDirectoryAtPath:uploadDirPath withIntermediateDirectories:true attributes:nil error:nil]) {

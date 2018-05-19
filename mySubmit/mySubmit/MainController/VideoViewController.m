@@ -21,6 +21,7 @@
 @property (nonatomic, strong) AVPlayerViewController * avPlayerVC;
 @property (nonatomic, strong) UIButton * playBtn;
 @property (nonatomic, strong) UIButton * fullPlayBtn;
+@property (nonatomic, strong) UIButton * saveVideoBtn;
 @end
 
 @implementation VideoViewController
@@ -146,6 +147,8 @@
     }
     return _fullPlayBtn;
 }
+
+
 
 /*
 #pragma mark - Navigation

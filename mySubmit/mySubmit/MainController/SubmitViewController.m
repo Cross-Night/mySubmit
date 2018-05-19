@@ -147,7 +147,7 @@
     
     NSFileManager * fileManager = [NSFileManager defaultManager];
     NSString* uploadDirPath =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-    uploadDirPath = [NSString stringWithFormat:@"%@/file1",uploadDirPath];
+    uploadDirPath = [NSString stringWithFormat:@"%@/%@",uploadDirPath,self.info.userID];
     self.fileNameArray = [NSMutableArray arrayWithArray:[fileManager contentsOfDirectoryAtPath:uploadDirPath error:nil]];
     self.fileArray = [NSMutableArray array];
     

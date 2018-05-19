@@ -22,8 +22,52 @@
     self.navigationController.navigationBar.translucent = YES;
     UIImageView * imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     imageView.image = self.image;
+    
+    UILongPressGestureRecognizer * recognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(onImageLongPress)];
+    [imageView addGestureRecognizer:recognizer];
+    imageView.userInteractionEnabled = YES;
+    
     [self.view addSubview:imageView];
     // Do any additional setup after loading the view.
+}
+
+- (void)onImageLongPress {
+    UIAlertController * alert = [UIAlertController alertControllerWithTitle:@"保存" message:@"是否保存到相册？" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction * saveAction = [UIAlertAction actionWithTitle:@"保存" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIImageWriteToSavedPhotosAlbum(self.image, self, @selector(imageSavedToPhotosAlbum:didFinishSavingWithError:contextInfo:), NULL);
+    }];
+    UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    [alert addAction:saveAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)imageSavedToPhotosAlbum:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+
+{
+    
+    if(!error){
+        
+        UIAlertController *alert1 = [UIAlertController alertControllerWithTitle:@"提示" message:@"图片保存成功！" preferredStyle:1];
+        
+        UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:1 handler:nil];
+        
+        [alert1 addAction:action];
+        
+        [self presentViewController:alert1 animated:YES completion:nil];
+        
+        
+        
+        
+        
+        
+        
+    }else{
+        
+        NSLog(@"savefailed");
+        
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {

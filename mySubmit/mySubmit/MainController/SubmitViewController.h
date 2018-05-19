@@ -13,6 +13,8 @@
 #import "MyHTTPConnection.h"
 #import "SJXCSMIPHelper.h"
 #import <AFNetworkReachabilityManager.h>
+#import "UserInfo.h"
+
 
 @interface SubmitViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UILabel *wifiLabel;
@@ -20,5 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *fileCountLabel;
 @property (weak, nonatomic) IBOutlet UIButton *doneBtn;
 
+@property (nonatomic, strong) UserInfo * info;
 
 @end

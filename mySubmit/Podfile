@@ -5,4 +5,5 @@ target 'mySubmit' do
 	  pod 'ReactiveCocoa', '~> 2.5'
       pod 'AFNetworking'
       pod 'Masonry'
+      pod 'YYCache', '~> 1.0.4'
 end
