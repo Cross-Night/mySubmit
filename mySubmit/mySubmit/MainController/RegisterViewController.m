@@ -12,6 +12,7 @@
 #import "UserDBManager.h"
 #import "LoginViewController.h"
 
+
 @interface RegisterViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userIDTf;
 @property (weak, nonatomic) IBOutlet UITextField *passWordTf;
@@ -33,17 +34,24 @@
         info.userID = self.userIDTf.text;
         info.passWord = self.passWordTf.text;
         //[[UserCache shareCache] saveUserInfo:info];
-        BOOL success =[[UserDBManager defaultManager] insertUser:info];
-        if (success) {
-            UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"注册成功" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction * alertAct = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//                UIStoryboard * sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-//                LoginViewController * loginVC = (LoginViewController *)[sb instantiateViewControllerWithIdentifier:@"LoginViewController"];
-//                [self.navigationController pushViewController:loginVC animated:YES];
-                [self.navigationController popViewControllerAnimated:YES];
-            }];
-            [alertVC addAction:alertAct];
-            [self presentViewController:alertVC animated:YES completion:nil];
+        if ([[UserDBManager defaultManager] getUserWithUserID:info.userID] != nil) {
+            UIAlertController * existAlertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"用户已存在" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction * cancelAct = [UIAlertAction actionWithTitle:@"返回" style:UIAlertActionStyleDefault handler:nil];
+            [existAlertVC addAction:cancelAct];
+            [self presentViewController:existAlertVC animated:YES completion:nil];
+        }else{
+            BOOL success =[[UserDBManager defaultManager] insertUser:info];
+            if (success) {
+                UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"注册成功" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction * alertAct = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    //                UIStoryboard * sb = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+                    //                LoginViewController * loginVC = (LoginViewController *)[sb instantiateViewControllerWithIdentifier:@"LoginViewController"];
+                    //                [self.navigationController pushViewController:loginVC animated:YES];
+                    [self.navigationController popViewControllerAnimated:YES];
+                }];
+                [alertVC addAction:alertAct];
+                [self presentViewController:alertVC animated:YES completion:nil];
+            }
         }
     }
 }
