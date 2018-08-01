@@ -50,7 +50,6 @@
                     self.bgImageView.image = [UIImage imageWithData:data];
                    
                 }else{
-                    self.bgImageView.image = [UIImage imageNamed:@"submit_center"];
                 }
             }
         }

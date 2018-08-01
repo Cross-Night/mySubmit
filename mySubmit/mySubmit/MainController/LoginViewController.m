@@ -37,14 +37,20 @@
 
 - (IBAction)onLoginBtnClicked:(UIButton *)sender {
     self.info = [[UserDBManager defaultManager] getUserWithUserID:self.userIDLabel.text];
-    if (self.info!=nil && [self.info.userID isEqualToString:self.userIDLabel.text] && [self.info.passWord isEqualToString:self.passWordLabel.text]) {
-        [self performSegueWithIdentifier:@"login2Main" sender:nil];
-      
-    }else{
-        UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"密码错误" preferredStyle:UIAlertControllerStyleAlert];
+    if (self.info == nil) {
+        UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"用户不存在" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"再输一次" style:UIAlertActionStyleCancel handler:nil];
         [alertVC addAction:cancelAction];
         [self presentViewController:alertVC animated:YES completion:nil];
+    }else{
+        if ([self.info.userID isEqualToString:self.userIDLabel.text] && ![self.info.passWord isEqualToString:self.passWordLabel.text]) {
+            UIAlertController * alertVC = [UIAlertController alertControllerWithTitle:@"提示" message:@"密码错误" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"再输一次" style:UIAlertActionStyleCancel handler:nil];
+            [alertVC addAction:cancelAction];
+            [self presentViewController:alertVC animated:YES completion:nil];
+            }else{
+                [self performSegueWithIdentifier:@"login2Main" sender:nil];
+        }
     }
 }
 

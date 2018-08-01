@@ -12,9 +12,11 @@
 #import "ImageController.h"
 #import "MusicController.h"
 #import "VideoViewController.h"
+#import "AccountManager.h"
 
 @interface fileListTableViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *fileListTableView;
+@property (strong, nonatomic) UserInfo * myInfo;
 
 
 @end
@@ -25,6 +27,9 @@
     [super viewDidLoad];
     self.fileListTableView.delegate = self;
     self.fileListTableView.dataSource = self;
+    
+    self.myInfo = [AccountManager defaultManager].info;
+    self.title = [NSString stringWithFormat:@"%@的文件",self.myInfo.userID];
     
     NSFileManager * fileManager = [NSFileManager defaultManager];
     NSString* uploadDirPath =[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
